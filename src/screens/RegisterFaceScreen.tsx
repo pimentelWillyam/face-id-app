@@ -18,18 +18,16 @@ export default function RegisterFaceScreen({ navigation }: Props) {
         const photo = await cameraRef.current.takePictureAsync({ quality: 0.7, base64: true });
         setPhotoUri(photo.uri);
       } catch (error) {
-        Alert.alert('Error', 'Failed to take picture');
+        Alert.alert('Erro', 'Falha ao tirar foto');
       }
     }
   };
 
   if (!permission) {
-    // Camera permissions are still loading.
-    return <Text>Loading camera permissions...</Text>;
+    return <Text>Carregando permissões da câmera...</Text>;
   }
 
   if (!permission.granted) {
-    // Camera permissions are not granted yet.
     return (
       <View style={styles.container}>
         <Text style={styles.message}>We need your permission to show the camera</Text>
@@ -63,16 +61,16 @@ export default function RegisterFaceScreen({ navigation }: Props) {
               setPhotoUri(null);
             }}
           >
-            <Text style={styles.text}>Retake</Text>
+            <Text style={styles.text}>Tirar foto novamente</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.button, { backgroundColor: 'green', marginTop: 10 }]}
             onPress={() => {
-              Alert.alert('Face registered!', 'You can now use this photo for recognition.');
+              Alert.alert('Face cadastrada!', 'Você pode usar esta foto para reconhecimento.');
               navigation.goBack();
             }}
           >
-            <Text style={styles.text}>Confirm</Text>
+            <Text style={styles.text}>Confirmar</Text>
           </TouchableOpacity>
         </View>
       )}
