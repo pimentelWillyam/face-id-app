@@ -15,8 +15,7 @@ export default function LoginWithFaceScreen({ navigation }: Props) {
   const handleFaceDetection = () => {
     if (!faceDetected) {
       setFaceDetected(true);
-      Alert.alert('Success', 'Face detected! Logging in...');
-      // TODO: Add your login logic here
+      Alert.alert('Sucesso', 'Face detectada! Entrando...');
       setTimeout(() => {
         navigation.replace('Home');
       }, 1500);
@@ -32,8 +31,8 @@ export default function LoginWithFaceScreen({ navigation }: Props) {
     // Camera permissions are not granted yet.
     return (
       <View style={styles.container}>
-        <Text style={styles.message}>We need your permission to show the camera</Text>
-        <Text style={styles.message} onPress={requestPermission}>Grant Permission</Text>
+        <Text style={styles.message}>Precisamos de sua permissão para mostrar a câmera</Text>
+        <Text style={styles.message} onPress={requestPermission}>Conceder permissão</Text>
       </View>
     );
   }
@@ -47,14 +46,14 @@ export default function LoginWithFaceScreen({ navigation }: Props) {
       >
         <View style={styles.overlay}>
           {faceDetected ? (
-            <Text style={styles.text}>Face Detected! Logging in...</Text>
+            <Text style={styles.text}>Face detectada! Entrando...</Text>
           ) : (
-            <Text style={styles.text}>Please position your face in front of the camera</Text>
+            <Text style={styles.text}>Por favor, posicione sua face na frente da câmera</Text>
           )}
         </View>
         <View style={styles.buttonContainer}>
           <Text style={styles.detectButton} onPress={handleFaceDetection}>
-            Detect Face
+            Detectar face
           </Text>
         </View>
       </CameraView>
