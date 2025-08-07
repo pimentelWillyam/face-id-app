@@ -86,11 +86,13 @@ const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: '#00000080',
     alignSelf: 'center',
-    marginBottom: 30,
+    marginBottom: 40,
     borderRadius: 10,
+    alignItems: 'center',
+    width: 'auto',
   },
   button: {
-    padding: 15,
+    padding: 22,
     backgroundColor: '#2196F3',
     borderRadius: 10,
     alignItems: 'center',

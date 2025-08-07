@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   camera: { flex: 1 },
   overlay: {
     position: 'absolute',
-    bottom: 60,
+    bottom: 120,
     width: '100%',
     alignItems: 'center',
   },
@@ -78,6 +78,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#00000099',
     padding: 10,
     borderRadius: 10,
+    textShadowColor: '#000',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 6,
+    elevation: 8,
   },
   loader: {
     position: 'absolute',
@@ -91,7 +95,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 60,
     alignSelf: 'center',
   },
   detectButton: {

@@ -1,4 +1,3 @@
-// screens/HomeScreen.tsx
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
@@ -9,10 +8,15 @@ type Props = {
 export default function HomeScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to the Home Screen!</Text>
+      <Text style={styles.title}>Bem-vindo!</Text>
       <Button
-        title="Go to Profile"
-        onPress={() => navigation.navigate('Profile')}
+        title="Login com Face ID"
+        onPress={() => navigation.navigate('LoginWithFace')}
+      />
+      <Button
+        title="Registrar Face ID"
+        onPress={() => navigation.navigate('RegisterFace')}
+        color="#4CAF50"
       />
     </View>
   );
@@ -24,6 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
+    gap: 16,
   },
   title: {
     fontSize: 24,
