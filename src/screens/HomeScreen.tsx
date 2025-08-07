@@ -8,7 +8,7 @@ type Props = {
 export default function HomeScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo!</Text>
+      <Text style={styles.title}>Bem-vindo a prova de conceito da autenticação facial!</Text>
       <Button
         title="Login com Face ID"
         onPress={() => navigation.navigate('LoginWithFace')}
